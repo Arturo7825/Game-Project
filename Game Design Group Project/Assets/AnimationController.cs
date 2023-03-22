@@ -9,6 +9,8 @@ public class AnimationController : MonoBehaviour
     static float y = 0.0f;
     static int jumpCount = 0;
     Vector2 position;
+    //public Vector3 myPos;
+    //public Transform myPlay;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,28 +21,29 @@ public class AnimationController : MonoBehaviour
     void Update()
     {
         bool OnPlatform = Platform.getOnPlatform();
-
         if (Input.GetKey(KeyCode.W) && OnPlatform == true || jumpCount > 0)
         {
             if(jumpCount == 0)
             {
-                jumpCount = 10;
+                jumpCount = 100;
             }
             animator.SetInteger("AnimState", 2);
-            y += 0.001f;
+            y += 0.04f;
             if (Input.GetKey(KeyCode.A))
             {
                 x -= 0.001f;
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
+                //transform.localRotation = Quaternion.Euler(0, 180, 0);
+                animator.SetInteger("AnimState", 3);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 x += 0.001f;
                 transform.localRotation = Quaternion.Euler(0, 360, 0);
+                animator.SetInteger("AnimState", 1);
             }
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
+            //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
             jumpCount--;
         }
 
@@ -48,20 +51,21 @@ public class AnimationController : MonoBehaviour
         {
             animator.SetInteger("AnimState", 1);
             transform.localRotation = Quaternion.Euler(0, 360, 0);
-            x += 0.001f;
+            x += 0.003f;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
+            //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
+            //transform.position = myPlay.position + myPos;
         }
 
         else if (Input.GetKey(KeyCode.A))
         {
-            animator.SetInteger("AnimState", 1);
-            transform.localRotation = Quaternion.Euler(0, 180, 0);
-            x -= 0.001f;
+            animator.SetInteger("AnimState", 3);
+            //transform.localRotation = Quaternion.Euler(0, 180, 0);
+            x -= 0.003f;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
+            //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
         }
 
 
@@ -69,12 +73,18 @@ public class AnimationController : MonoBehaviour
         {
             animator.SetInteger("AnimState", 0);
         }
-
         if (OnPlatform == false && jumpCount == 0)
         {
-            y -= 0.008f;
+            if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
+            {
+                y = transform.position.y - 0.007f;
+            }
+            else
+            {
+                y = transform.position.y - 0.003f;
+            }
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
-            GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
+            //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
         }
     }
 }
