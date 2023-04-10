@@ -9,7 +9,7 @@ public class AnimationController : MonoBehaviour
     static float y = 0f;
     static float temp = 1f;
     static int jumpCount = 0;
-    static int number = 0;
+    //static int number = 0;
     static bool falling = false;
     Vector2 position;
     void Start()
@@ -28,7 +28,7 @@ public class AnimationController : MonoBehaviour
             //falling = true;
             //print("true");
             //print(number);
-            number++;
+            
         }
         else
         {
@@ -44,9 +44,10 @@ public class AnimationController : MonoBehaviour
             falling = false;
         }
         bool OnPlatform = Platform.getOnPlatform();
+        //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         {
-            if (jumpCount == 0)
+            if (jumpCount == 0 && falling == false && OnPlatform == true)
             {
                 jumpCount = 150;
             }
@@ -55,21 +56,24 @@ public class AnimationController : MonoBehaviour
             y += 0.03f;
             if (Input.GetKey(KeyCode.A))
             {
-                x -= 0.003f;
+                x -= 0.005f;
                 //transform.localRotation = Quaternion.Euler(0, 180, 0);
                 animator.SetInteger("AnimState", 3);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                x += 0.003f;
+                x += 0.005f;
                 transform.localRotation = Quaternion.Euler(0, 360, 0);
                 animator.SetInteger("AnimState", 1);
             }
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
             //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
-            jumpCount--;
             //falling = true;
+        }
+        if(jumpCount > 0)
+        {
+            jumpCount--;
         }
 
         else if (Input.GetKey(KeyCode.D))
