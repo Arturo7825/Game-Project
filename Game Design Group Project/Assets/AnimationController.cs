@@ -11,6 +11,7 @@ public class AnimationController : MonoBehaviour
     static int jumpCount = 0;
     //static int number = 0;
     static bool falling = false;
+    public AudioSource jump;
     Vector2 position;
     void Start()
     {
@@ -50,6 +51,7 @@ public class AnimationController : MonoBehaviour
             if (jumpCount == 0 && falling == false && OnPlatform == true)
             {
                 jumpCount = 150;
+                jump.Play();
             }
             animator.SetInteger("AnimState", 2);
             //temp = y;
