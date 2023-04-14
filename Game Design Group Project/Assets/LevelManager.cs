@@ -5,9 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static void win()
+    static string[] levels = { "Level1", "Level2" };
+    public static void win(int transitionNumber)
     {
         SceneManager.LoadScene("Win");
+        if(Input.GetKey(KeyCode.D))
+        {
+            //SceneManager.LoadScene(levels)
+        }
     }
 
     public static void lose()

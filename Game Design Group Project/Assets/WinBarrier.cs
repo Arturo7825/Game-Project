@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class WinBarrier : MonoBehaviour
 {
-
+    public int transitionNumber;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        LevelManager.win();
+        LevelManager.win(transitionNumber);
     }
 }
