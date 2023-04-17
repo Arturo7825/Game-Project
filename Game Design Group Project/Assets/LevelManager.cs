@@ -5,18 +5,29 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
+    static bool OnWin = false;
+    static int transitionNumber;
     static string[] levels = { "Level1", "Level2" };
-    public static void win(int transitionNumber)
+
+    public static void win(int newTransitionNumber)
     {
         SceneManager.LoadScene("Win");
-        if(Input.GetKey(KeyCode.D))
-        {
-            //SceneManager.LoadScene(levels)
-        }
+        OnWin = true;
+        transitionNumber = newTransitionNumber;
+
     }
 
     public static void lose()
     {
         SceneManager.LoadScene("Lose");
+    }
+
+    void Update()
+    {
+        if (Input.GetKey(KeyCode.G))
+        {
+            SceneManager.LoadScene(levels[transitionNumber]);
+            OnWin = false;
+        }
     }
 }

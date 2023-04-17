@@ -133,6 +133,7 @@ GameObject:
   m_Component:
   - component: {fileID: 21896552}
   - component: {fileID: 21896551}
+  - component: {fileID: 21896553}
   m_Layer: 0
   m_Name: NextlvlScrn
   m_TagString: Untagged
@@ -205,6 +206,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &21896553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 21896550}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ab569eb017c8c94aa8e805181834755, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &72980106
 GameObject:
   m_ObjectHideFlags: 0
@@ -441,7 +454,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press D to Continue
+  m_Text: Press G to Continue
 --- !u!222 &1317156140
 CanvasRenderer:
   m_ObjectHideFlags: 0
