@@ -9,6 +9,7 @@ public class AnimationController : MonoBehaviour
     static float y = 0f;
     static float temp = 1f;
     static int jumpCount = 0;
+    static Rigidbody rigidbody=null;
     //static int number = 0;
     static bool falling = false;
     public AudioSource jump;
@@ -21,21 +22,24 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        rigidbody = gameObject.GetComponent<Rigidbody>();
         x = transform.position.x;
-        //temp = y;
+        temp = y;
         y = transform.position.y;
         if(temp != y)
         {
-            //falling = true;
-            //print("true");
+            falling = true;
             //print(number);
             
         }
         else
         {
-            //falling = false;
+            falling = false;
+            jumpCount = 0;
             //print("false");
         }
+        print(falling);
+        /*
         if (jumpCount > 0)
         {
             falling = true;
@@ -44,6 +48,7 @@ public class AnimationController : MonoBehaviour
         {
             falling = false;
         }
+        */
         bool OnPlatform = Platform.getOnPlatform();
         //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
