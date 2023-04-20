@@ -1715,7 +1715,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xMin: -17.5
-  xMax: 26.7
+  xMax: 20
   yMin: -0.9
   yMax: 0.7
 --- !u!81 &1348083729
@@ -1946,6 +1946,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a4659cb8ca5b2479562bebf1e3c5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpHeight: 0.015
+  jumpWidth: 0.007
+  rigidbody: {fileID: 1358862772}
   jump: {fileID: 1358862771}
 --- !u!95 &1358862775
 Animator:

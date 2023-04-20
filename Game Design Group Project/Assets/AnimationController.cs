@@ -8,8 +8,10 @@ public class AnimationController : MonoBehaviour
     static float x = 0f;
     static float y = 0f;
     static float temp = 1f;
+    public float jumpHeight;
+    public float jumpWidth;
     static int jumpCount = 0;
-    static Rigidbody rigidbody=null;
+    public Rigidbody2D rigidbody;
     //static int number = 0;
     static bool falling = false;
     public AudioSource jump;
@@ -22,11 +24,13 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rigidbody = gameObject.GetComponent<Rigidbody>();
+        //rigidbody = gameObject.GetComponent<Rigidbody2D>();
         x = transform.position.x;
         temp = y;
         y = transform.position.y;
-        if(temp != y)
+        //if(temp != y)
+        //if(rigidbody.velocity.y < 0)
+        if(rigidbody.velocity.y != 0)
         {
             falling = true;
             //print(number);
@@ -35,10 +39,10 @@ public class AnimationController : MonoBehaviour
         else
         {
             falling = false;
-            jumpCount = 0;
+            //jumpCount = 0;
             //print("false");
         }
-        print(falling);
+        //print(falling);
         /*
         if (jumpCount > 0)
         {
@@ -51,7 +55,8 @@ public class AnimationController : MonoBehaviour
         */
         bool OnPlatform = Platform.getOnPlatform();
         //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
-        if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
+        //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
+        if (Input.GetKey(KeyCode.W) && (falling == false || jumpCount > 0 && falling == true))
         {
             if (jumpCount == 0 && falling == false && OnPlatform == true)
             {
@@ -60,16 +65,19 @@ public class AnimationController : MonoBehaviour
             }
             animator.SetInteger("AnimState", 2);
             //temp = y;
-            y += 0.03f;
+            //y += 0.03f;
+            y += jumpHeight;
             if (Input.GetKey(KeyCode.A))
             {
-                x -= 0.005f;
+                //x -= 0.005f;
+                x -= jumpWidth;
                 //transform.localRotation = Quaternion.Euler(0, 180, 0);
                 animator.SetInteger("AnimState", 3);
             }
             else if (Input.GetKey(KeyCode.D))
             {
-                x += 0.005f;
+                //x += 0.005f;
+                x += jumpWidth;
                 transform.localRotation = Quaternion.Euler(0, 360, 0);
                 animator.SetInteger("AnimState", 1);
             }

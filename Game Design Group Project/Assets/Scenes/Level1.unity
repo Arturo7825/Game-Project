@@ -1483,7 +1483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   xMin: -34.5
-  xMax: 26.7
+  xMax: 28
   yMin: -3
   yMax: 6.5
 --- !u!1 &1679390363
@@ -2024,6 +2024,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a4659cb8ca5b2479562bebf1e3c5de, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  jumpHeight: 0.03
+  jumpWidth: 0.005
+  rigidbody: {fileID: 2064586685}
   jump: {fileID: 2064586687}
 --- !u!50 &2064586685
 Rigidbody2D:
