@@ -29,8 +29,7 @@ public class AnimationController : MonoBehaviour
         temp = y;
         y = transform.position.y;
         //if(temp != y)
-        //if(rigidbody.velocity.y < 0)
-        if(rigidbody.velocity.y != 0)
+        if(rigidbody.velocity.y < 0)
         {
             falling = true;
             //print(number);
@@ -39,7 +38,7 @@ public class AnimationController : MonoBehaviour
         else
         {
             falling = false;
-            //jumpCount = 0;
+            jumpCount = 0;
             //print("false");
         }
         //print(falling);
@@ -54,11 +53,20 @@ public class AnimationController : MonoBehaviour
         }
         */
         bool OnPlatform = Platform.getOnPlatform();
+        bool onLadder = Ladder.getOnLadder();
         //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
-        if (Input.GetKey(KeyCode.W) && (falling == false || jumpCount > 0 && falling == true))
+        if (onLadder == true && Input.GetKey(KeyCode.W))
         {
-            if (jumpCount == 0 && falling == false && OnPlatform == true)
+            y += 0.002f;
+            rigidbody.velocity = Vector3.zero;
+            Vector2 target = new Vector2(0.0f + x, 0.0f + y);
+            transform.position = Vector2.MoveTowards(transform.position, target, 1);
+        }
+        else if (Input.GetKey(KeyCode.W) && (falling == false || jumpCount > 0 && falling == true))
+        {
+            //if (jumpCount == 0 && falling == false && OnPlatform == true)
+            if (jumpCount == 0 && falling == false)
             {
                 jumpCount = 150;
                 jump.Play();
