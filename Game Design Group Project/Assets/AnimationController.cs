@@ -33,7 +33,7 @@ public class AnimationController : MonoBehaviour
         {
             falling = true;
             //print(number);
-            
+           
         }
         else
         {
@@ -144,5 +144,10 @@ public class AnimationController : MonoBehaviour
         }
         */
         //temp = y;
+    }
+
+    public static float getX()
+    {
+        return x;
     }
 }
