@@ -145,4 +145,8 @@ public class AnimationController : MonoBehaviour
         */
         //temp = y;
     }
+    public static float getX()
+    {
+        return x;
+    }
 }
