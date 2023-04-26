@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class TubeScript : MonoBehaviour
 {
@@ -8,7 +9,7 @@ public class TubeScript : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        levelManager.LoadLevel("Win");
+        SceneManager.LoadScene("Win");
 
     }
 }
