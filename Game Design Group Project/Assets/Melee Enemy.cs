@@ -6,6 +6,7 @@ public class AnimationTest : MonoBehaviour
 {
     static float x = 0.0f;
     static float playerPosX = AnimationController.getX();
+    Vector2 position;
     //public float initialPosY;
     //static float y = initialPosY;
 
@@ -20,18 +21,25 @@ public class AnimationTest : MonoBehaviour
         {
             difference = difference * -1;
         }
+        if (playerPosX < 0)
+        {
+            playerPosX = playerPosX * -1;
+        }
         if (difference < 0.03)
         {
             yield return new WaitForSeconds(3.0f);
         }
         else if (x < playerPosX)
         {
-            x -= -0.03f;
+            x += -0.03f;
+            transform.localRotation = Quaternion.Euler(0, 360, 0);
         }
         else if (x > playerPosX)
         {
-            x += 0.03f;
+            x -= 0.03f;
+            transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
-
+        Vector2 target = new Vector2(0.0f + x, 0.0f);
+        transform.position = Vector2.MoveTowards(transform.position, target, 1);
     }
 }
