@@ -20,7 +20,7 @@ public class RangedEnemy : MonoBehaviour
     */
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         if (first == true)
         {
@@ -58,8 +58,7 @@ public class RangedEnemy : MonoBehaviour
                 animator.SetInteger("AnimState", 4);
             }
         }
-        //if (state == 4)
-        if (state == 3)
+        if (state == 4 && Time.deltaTime < 0.005)
         {
             bool hit = RangedDeathZone.getHit();
             if (hit == true)
@@ -68,18 +67,30 @@ public class RangedEnemy : MonoBehaviour
                 LevelManager.lose();
             }
         }
-        count++;
-        count += Time.deltaTime;
+        else if (state == 3 && Time.deltaTime >= 0.005)
+        {
+            bool hit = RangedDeathZone.getHit();
+            if (hit == true)
+            {
+                Die.Play();
+                LevelManager.lose();
+            }
+        }
+        //count++;
+        /*
+        if (Time.deltaTime < 0.005)
+        {
+            count += Time.deltaTime / 4;
+        }
+        else
+        {
+            count += Time.deltaTime;
+        }*/
+        count += Time.deltaTime * 300;
         //if (count == 4000)
         if (count >= 500)
         {
             count = 0;
         }
-    }
-
-    private static IEnumerator Wait()
-    {
-        print("a");
-        yield return new WaitForSeconds(3000.0f);
     }
 }

@@ -4,6 +4,8 @@ ScriptsOnlyBuild:
     - AnimationController
     - CameraSystem
     - Ladder
+    - Laser
+    - LaserSpawner
     - LevelManager
     - LoseBarrier
     - Platform
@@ -14,6 +16,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -29,8 +32,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -75,19 +80,23 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1764}
+      Script: {instanceID: 1620}
     - Class: 114
-      Script: {instanceID: 2114}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 2514}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2522}
     - Class: 114
-      Script: {instanceID: 2936}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 3808}
+      Script: {instanceID: 2944}
     - Class: 114
-      Script: {instanceID: 4686}
+      Script: {instanceID: 3324}
+    - Class: 114
+      Script: {instanceID: 3818}
+    - Class: 114
+      Script: {instanceID: 4696}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -130,17 +139,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1764}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 2114}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 2934}
+      Script: {instanceID: 2942}
     - Class: 114
-      Script: {instanceID: 3808}
+      Script: {instanceID: 3818}
     - Class: 114
-      Script: {instanceID: 3980}
+      Script: {instanceID: 3990}
     - Class: 114
-      Script: {instanceID: 4686}
+      Script: {instanceID: 4696}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -183,11 +192,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1764}
+      Script: {instanceID: 1772}
     - Class: 114
-      Script: {instanceID: 2114}
+      Script: {instanceID: 2122}
     - Class: 114
-      Script: {instanceID: 3808}
+      Script: {instanceID: 3818}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -245,17 +254,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1834}
+      Script: {instanceID: 1842}
     - Class: 114
-      Script: {instanceID: 2238}
+      Script: {instanceID: 2246}
     - Class: 114
-      Script: {instanceID: 2656}
+      Script: {instanceID: 2664}
     - Class: 114
-      Script: {instanceID: 2816}
+      Script: {instanceID: 2824}
     - Class: 114
-      Script: {instanceID: 3038}
+      Script: {instanceID: 3046}
     - Class: 114
-      Script: {instanceID: 3280}
+      Script: {instanceID: 3288}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -299,6 +308,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.Animation.Runtime.dll
     namespaceName: UnityEngine.U2D.Animation
     className: SpriteSkin
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Laser
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -557,6 +572,12 @@ ScriptsOnlyBuild:
     assemblyName: Unity.Timeline.dll
     namespaceName: UnityEngine.Timeline
     className: MarkerTrack
+  - hash:
+      serializedVersion: 2
+      Hash: 7fdfda8e50fb4ee2d113c4c8db881b22
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LaserSpawner
   - hash:
       serializedVersion: 2
       Hash: 8e6ceabfd38a184413d69b7db56c89cc
@@ -864,5 +885,5 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Win.unity
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level3.unity
-  playerPath: C:/Users/hoove/OneDrive/Documents/Game-Design-Group-Project/Game Design
+  playerPath: C:/Users/ohassan/Desktop/Unity/Game-Design-Group-Project/Game Design
     Group Project/Game Design Group Project.exe

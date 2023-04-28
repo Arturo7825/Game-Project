@@ -11,6 +11,7 @@ public class AnimationController : MonoBehaviour
     public float jumpHeight;
     public float jumpWidth;
     static int jumpCount = 0;
+    static int slowFallCount = 0;
     public Rigidbody2D rigidbody;
     //static int number = 0;
     static bool falling = false;
@@ -22,7 +23,7 @@ public class AnimationController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         //rigidbody = gameObject.GetComponent<Rigidbody2D>();
         x = transform.position.x;
@@ -33,12 +34,18 @@ public class AnimationController : MonoBehaviour
         {
             falling = true;
             //print(number);
-            
+            /*
+            if (slowFallCount == 0)
+            {
+                rigidbody.velocity.y *= Time.DeltaTime;
+                slowFallCount = 1;
+            }*/
         }
         else
         {
             falling = false;
             jumpCount = 0;
+            //slowFallCount = 0;
             //print("false");
         }
         //print(falling);
@@ -74,18 +81,18 @@ public class AnimationController : MonoBehaviour
             animator.SetInteger("AnimState", 2);
             //temp = y;
             //y += 0.03f;
-            y += jumpHeight;
+            y += jumpHeight * Time.deltaTime;
             if (Input.GetKey(KeyCode.A))
             {
                 //x -= 0.005f;
-                x -= jumpWidth;
+                x -= jumpWidth * Time.deltaTime;
                 //transform.localRotation = Quaternion.Euler(0, 180, 0);
                 animator.SetInteger("AnimState", 3);
             }
             else if (Input.GetKey(KeyCode.D))
             {
                 //x += 0.005f;
-                x += jumpWidth;
+                x += jumpWidth * Time.deltaTime;
                 transform.localRotation = Quaternion.Euler(0, 360, 0);
                 animator.SetInteger("AnimState", 1);
             }
