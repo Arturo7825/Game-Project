@@ -6,12 +6,13 @@ public class AnimationTest : MonoBehaviour
 {
     static float x = 0.0f;
     static float playerPosX = AnimationController.getX();
+    float count = 0;
     Vector2 position;
     //public float initialPosY;
     //static float y = initialPosY;
 
     // Update is called once per frame
-    IEnumerator Update()
+    void Update()
     {
         x = transform.position.x;
         playerPosX = AnimationController.getX();
@@ -27,7 +28,11 @@ public class AnimationTest : MonoBehaviour
         }
         if (difference < 0.03)
         {
-            yield return new WaitForSeconds(3.0f);
+            count++;
+        }
+        else if ( difference > 0.03)
+        {
+            count = 0;
         }
         else if (x < playerPosX)
         {

@@ -103,7 +103,8 @@ public class AnimationController : MonoBehaviour
         {
             animator.SetInteger("AnimState", 1);
             transform.localRotation = Quaternion.Euler(0, 360, 0);
-            x += 0.003f;
+            //x += 0.003f;
+            x += 1.8f * Time.deltaTime;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
         }
@@ -111,7 +112,8 @@ public class AnimationController : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("AnimState", 3);
-            x -= 0.003f;
+            //x -= 0.003f;
+            x -= 1.8f * Time.deltaTime;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
         }

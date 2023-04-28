@@ -6,7 +6,8 @@ public class RangedEnemy : MonoBehaviour
 {
     Animator animator;
     int state = 0;
-    int count = 1;
+    //int count = 1;
+    float count = 1f;
     bool first = true;
     public AudioSource Die;
     /*
@@ -43,7 +44,8 @@ public class RangedEnemy : MonoBehaviour
             {
                 state = 2;
                 animator.SetInteger("AnimState", 2);
-                count = 3000;
+                //count = 3000;
+                count = 400;
             }
             else if (state == 2)
             {
@@ -56,7 +58,8 @@ public class RangedEnemy : MonoBehaviour
                 animator.SetInteger("AnimState", 4);
             }
         }
-        if (state == 4)
+        //if (state == 4)
+        if (state == 3)
         {
             bool hit = RangedDeathZone.getHit();
             if (hit == true)
@@ -66,7 +69,9 @@ public class RangedEnemy : MonoBehaviour
             }
         }
         count++;
-        if (count == 4000)
+        count += Time.deltaTime;
+        //if (count == 4000)
+        if (count >= 500)
         {
             count = 0;
         }
