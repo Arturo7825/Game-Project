@@ -29,6 +29,12 @@ public class AnimationController : MonoBehaviour
         x = transform.position.x;
         temp = y;
         y = transform.position.y;
+
+        if (y <= -7)
+        {
+            LevelManager.lose();
+        }
+
         //if(temp != y)
         if(rigidbody.velocity.y < 0)
         {
@@ -157,5 +163,9 @@ public class AnimationController : MonoBehaviour
     public static float getX()
     {
         return x;
+    }
+    public static float getY()
+    {
+        return y;
     }
 }

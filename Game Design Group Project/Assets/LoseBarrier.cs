@@ -9,6 +9,6 @@ public class LoseBarrier : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         Die.Play();
-        LevelManager.lose();
+        //LevelManager.lose();
     }
 }
