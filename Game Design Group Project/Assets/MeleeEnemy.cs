@@ -14,6 +14,7 @@ public class MeleeEnemy : MonoBehaviour
     Vector2 position;
     public AudioSource Die;
     public float AggroDistance;
+    public Rigidbody2D rigidbody;
     //public float initialPosY;
     //static float y = initialPosY;
 
@@ -46,17 +47,18 @@ public class MeleeEnemy : MonoBehaviour
         // }
         // print("x: "+ x);
         // print("playerPosX: "+playerPosX);
-        print(differenceY);
-        if (differenceX < 1.66 && differenceY < 2.4)
+        //print(differenceY);
+        if (differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0)
         {
             animator.SetInteger("AnimState", 1);
             if ( count == 40)
             {
                 animator.SetInteger("AnimState", 2);
                 bool hit = MeleeDeathZone.getHit();
-                if (hit == true && differenceX < 1.66 && differenceY < 2.4)
+                //print("differenceX: " + differenceX);
+                //print("hit: " + hit);
+                if (hit == true && differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0)
                 {
-                    print("a");
                     Die.Play();
                     LevelManager.lose();
                 }
@@ -71,7 +73,6 @@ public class MeleeEnemy : MonoBehaviour
         {
             animator.SetInteger("AnimState", 0);
             count = 0;
-            //print("a");
             x += 0.03f;
             transform.localRotation = Quaternion.Euler(0, 180, 0);
         }
