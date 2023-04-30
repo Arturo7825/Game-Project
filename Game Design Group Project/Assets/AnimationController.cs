@@ -13,6 +13,7 @@ public class AnimationController : MonoBehaviour
     static int jumpCount = 0;
     static int slowFallCount = 0;
     public Rigidbody2D rigidbody;
+    static bool right = true;
     //static int number = 0;
     static bool falling = false;
     public AudioSource jump;
@@ -90,6 +91,7 @@ public class AnimationController : MonoBehaviour
             y += jumpHeight * Time.deltaTime;
             if (Input.GetKey(KeyCode.A))
             {
+                right = false;
                 //x -= 0.005f;
                 x -= jumpWidth * Time.deltaTime;
                 //transform.localRotation = Quaternion.Euler(0, 180, 0);
@@ -97,6 +99,7 @@ public class AnimationController : MonoBehaviour
             }
             else if (Input.GetKey(KeyCode.D))
             {
+                right = true;
                 //x += 0.005f;
                 x += jumpWidth * Time.deltaTime;
                 transform.localRotation = Quaternion.Euler(0, 360, 0);
@@ -114,6 +117,7 @@ public class AnimationController : MonoBehaviour
 
         else if (Input.GetKey(KeyCode.D))
         {
+            right = true;
             animator.SetInteger("AnimState", 1);
             transform.localRotation = Quaternion.Euler(0, 360, 0);
             //x += 0.003f;
@@ -125,6 +129,7 @@ public class AnimationController : MonoBehaviour
         else if (Input.GetKey(KeyCode.A))
         {
             animator.SetInteger("AnimState", 3);
+            right = false;
             //x -= 0.003f;
             x -= 1.8f * Time.deltaTime;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
@@ -167,5 +172,9 @@ public class AnimationController : MonoBehaviour
     public static float getY()
     {
         return y;
+    }
+    public static bool getRight()
+    {
+        return right;
     }
 }

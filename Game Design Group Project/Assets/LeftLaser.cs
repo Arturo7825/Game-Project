@@ -1,0 +1,26 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class LeftLaser : MonoBehaviour
+{
+    // Update is called once per frame
+    void Update()
+    {
+        Vector2 target = new Vector2(transform.position.x - 0.1f, transform.position.y);
+        transform.position = Vector2.MoveTowards(transform.position, target, 1);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag == "Enemy")
+        {
+            Destroy (this.gameObject);
+            Destroy(collision.gameObject);
+        }
+        else if (collision.gameObject.tag == "Untagged")
+        {
+            Destroy (this.gameObject);
+        }
+    }
+}
