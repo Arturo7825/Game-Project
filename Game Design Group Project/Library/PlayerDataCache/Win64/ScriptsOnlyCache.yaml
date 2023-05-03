@@ -4,19 +4,21 @@ ScriptsOnlyBuild:
     - AnimationController
     - CameraSystem
     - Ladder
-    - Laser
     - LaserSpawner
+    - LeftLaser
     - LevelManager
     - LoseBarrier
+    - MeleeDeathZone
+    - MeleeEnemy
     - Platform
     - RangedDeathZone
     - RangedEnemy
+    - RightLaser
     - WinBarrier
     Unity.2D.Animation.Editor.dll:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
-    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -32,10 +34,8 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
-    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -80,23 +80,29 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1620}
+      Script: {instanceID: 1626}
     - Class: 114
-      Script: {instanceID: 1772}
+      Script: {instanceID: 1778}
     - Class: 114
-      Script: {instanceID: 2122}
+      Script: {instanceID: 2128}
     - Class: 114
-      Script: {instanceID: 2522}
+      Script: {instanceID: 2528}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 2944}
+      Script: {instanceID: 2950}
     - Class: 114
-      Script: {instanceID: 3324}
+      Script: {instanceID: 3078}
     - Class: 114
-      Script: {instanceID: 3818}
+      Script: {instanceID: 3332}
     - Class: 114
-      Script: {instanceID: 4696}
+      Script: {instanceID: 3826}
+    - Class: 114
+      Script: {instanceID: 3880}
+    - Class: 114
+      Script: {instanceID: 4704}
+    - Class: 114
+      Script: {instanceID: 5698}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -139,17 +145,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1772}
+      Script: {instanceID: 1778}
     - Class: 114
-      Script: {instanceID: 2122}
+      Script: {instanceID: 2128}
     - Class: 114
-      Script: {instanceID: 2942}
+      Script: {instanceID: 2948}
     - Class: 114
-      Script: {instanceID: 3818}
+      Script: {instanceID: 3826}
     - Class: 114
-      Script: {instanceID: 3990}
+      Script: {instanceID: 3998}
     - Class: 114
-      Script: {instanceID: 4696}
+      Script: {instanceID: 4704}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -160,7 +166,7 @@ ScriptsOnlyBuild:
       Script: {instanceID: 0}
     - Class: 213
       Script: {instanceID: 0}
-    Assets/Scenes/Level3.unity:
+    Assets/Scenes/Level4.unity:
     - Class: 1
       Script: {instanceID: 0}
     - Class: 4
@@ -192,11 +198,11 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1772}
+      Script: {instanceID: 1778}
     - Class: 114
-      Script: {instanceID: 2122}
+      Script: {instanceID: 2128}
     - Class: 114
-      Script: {instanceID: 3818}
+      Script: {instanceID: 3826}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -254,17 +260,17 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
-      Script: {instanceID: 1842}
+      Script: {instanceID: 1848}
     - Class: 114
-      Script: {instanceID: 2246}
+      Script: {instanceID: 2252}
     - Class: 114
-      Script: {instanceID: 2664}
+      Script: {instanceID: 2670}
     - Class: 114
-      Script: {instanceID: 2824}
+      Script: {instanceID: 2830}
     - Class: 114
-      Script: {instanceID: 3046}
+      Script: {instanceID: 3052}
     - Class: 114
-      Script: {instanceID: 3288}
+      Script: {instanceID: 3296}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -313,7 +319,7 @@ ScriptsOnlyBuild:
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
-    className: Laser
+    className: RightLaser
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
@@ -520,6 +526,12 @@ ScriptsOnlyBuild:
     className: GraphicRaycaster
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MeleeDeathZone
+  - hash:
+      serializedVersion: 2
       Hash: f40fedccd4adbc76605bea6d67537e4b
     assemblyName: Unity.TextMeshPro.dll
     namespaceName: TMPro
@@ -574,7 +586,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: 7fdfda8e50fb4ee2d113c4c8db881b22
+      Hash: fd458e50c2e55d7cc24e11f11ff97a87
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LaserSpawner
@@ -650,6 +662,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.EventSystems
     className: BaseInput
+  - hash:
+      serializedVersion: 2
+      Hash: 55a8c6c2b667ff0e338c5e308a3d266e
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: MeleeEnemy
   - hash:
       serializedVersion: 2
       Hash: 18c222bef9ae745ce69ddde9b74337ca
@@ -878,12 +896,18 @@ ScriptsOnlyBuild:
     assemblyName: Unity.2D.IK.Runtime.dll
     namespaceName: UnityEngine.U2D.IK
     className: FabrikSolver2D
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: LeftLaser
   platform: 19
   scenePathNames:
   - Assets/Scenes/Level1.unity
   - Assets/Scenes/Lose.unity
   - Assets/Scenes/Win.unity
   - Assets/Scenes/Level2.unity
-  - Assets/Scenes/Level3.unity
+  - Assets/Scenes/Level4.unity
   playerPath: C:/Users/ohassan/Desktop/Unity/Game-Design-Group-Project/Game Design
     Group Project/Game Design Group Project.exe

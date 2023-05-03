@@ -7,7 +7,7 @@ public class RightLaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 target = new Vector2(transform.position.x + 0.1f, transform.position.y);
+        Vector2 target = new Vector2(transform.position.x + 8f * Time.deltaTime, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, target, 1);
     }
 
