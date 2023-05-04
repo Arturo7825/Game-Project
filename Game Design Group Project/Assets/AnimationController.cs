@@ -10,6 +10,7 @@ public class AnimationController : MonoBehaviour
     static float temp = 1f;
     public float jumpHeight;
     public float jumpWidth;
+    public int levelNumber;
     static int jumpCount = 0;
     static int slowFallCount = 0;
     public Rigidbody2D rigidbody;
@@ -34,7 +35,7 @@ public class AnimationController : MonoBehaviour
 
         if (y <= dieLevel)
         {
-            LevelManager.lose();
+            LevelManager.lose(levelNumber);
         }
 
         //if(temp != y)

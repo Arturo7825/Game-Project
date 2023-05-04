@@ -18,4 +18,8 @@ public class Ladder : MonoBehaviour
     {
         return onLadder;
     }
+    public static void makeFalse()
+    {
+        onLadder = false;
+    }
 }

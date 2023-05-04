@@ -12,6 +12,7 @@ public class RangedEnemy : MonoBehaviour
     public AudioSource Die;
     public AudioSource Charging;
     public AudioSource Fire;
+    public int levelNumber;
     /*
     void Start()
     {
@@ -69,7 +70,7 @@ public class RangedEnemy : MonoBehaviour
             if (hit == true)
             {
                 Die.Play();
-                LevelManager.lose();
+                LevelManager.lose(levelNumber);
             }
         }
         else if (state == 3 && Time.deltaTime >= 0.005)
@@ -78,7 +79,7 @@ public class RangedEnemy : MonoBehaviour
             if (hit == true)
             {
                 Die.Play();
-                LevelManager.lose();
+                LevelManager.lose(levelNumber);
             }
         }
         //count++;
