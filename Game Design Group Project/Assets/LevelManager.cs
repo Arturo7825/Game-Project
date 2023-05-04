@@ -7,7 +7,7 @@ public class LevelManager : MonoBehaviour
 {
     static bool OnWin = false;
     static int transitionNumber;
-    static string[] levels = { "Level1", "Level2", "Level3", "Level4"};
+    static string[] levels = { "Level1", "Level2", "Level3"};
 
     public static void win(int newTransitionNumber)
     {
