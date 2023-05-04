@@ -16,6 +16,7 @@ public class AnimationController : MonoBehaviour
     static bool right = true;
     //static int number = 0;
     static bool falling = false;
+    public float dieLevel;
     public AudioSource jump;
     Vector2 position;
     void Start()
@@ -31,7 +32,7 @@ public class AnimationController : MonoBehaviour
         temp = y;
         y = transform.position.y;
 
-        if (y <= -7)
+        if (y <= dieLevel)
         {
             LevelManager.lose();
         }

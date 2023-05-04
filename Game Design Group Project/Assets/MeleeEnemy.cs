@@ -17,6 +17,7 @@ public class MeleeEnemy : MonoBehaviour
     public Rigidbody2D rigidbody;
     public AudioSource Swing;
     bool standing = false;
+    //public float maxDifY;
     //public float initialPosY;
     //static float y = initialPosY;
 
@@ -29,6 +30,7 @@ public class MeleeEnemy : MonoBehaviour
             first = false;
         }
         x = transform.position.x;
+        y = transform.position.y;
         playerPosX = AnimationController.getX();
         playerPosY = AnimationController.getY();
         //float playerPosY = AnimationController.getY()
@@ -49,7 +51,9 @@ public class MeleeEnemy : MonoBehaviour
         // }
         // print("x: "+ x);
         // print("playerPosX: "+playerPosX);
-        //print(differenceY);
+        //differenceX < 1.66
+        //differentY < 3.2
+        //if (differenceX < 1.66 && differenceY < maxDifY && rigidbody.velocity.y >= 0 || standing == true)
         if (differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0 || standing == true)
         {
             standing = true;
@@ -61,6 +65,7 @@ public class MeleeEnemy : MonoBehaviour
                 bool hit = MeleeDeathZone.getHit();
                 //print("differenceX: " + differenceX);
                 //print("hit: " + hit);
+                //if (hit == true && differenceX < 1.66 && differenceY < maxDifY && rigidbody.velocity.y >= 0)
                 if (hit == true && differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0)
                 {
                     Die.Play();
