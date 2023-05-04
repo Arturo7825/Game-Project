@@ -10,6 +10,8 @@ public class RangedEnemy : MonoBehaviour
     float count = 1f;
     bool first = true;
     public AudioSource Die;
+    public AudioSource Charging;
+    public AudioSource Fire;
     /*
     void Start()
     {
@@ -36,6 +38,7 @@ public class RangedEnemy : MonoBehaviour
             }
             if (state == 0)
             {
+                Charging.Play();
                 state = 1;
                 animator.SetInteger("AnimState", 1);
 
@@ -49,11 +52,13 @@ public class RangedEnemy : MonoBehaviour
             }
             else if (state == 2)
             {
+                Fire.Play();
                 state = 3;
                 animator.SetInteger("AnimState", 3);
             }
             else if (state == 3)
             {
+                Fire.Stop();
                 state = 4;
                 animator.SetInteger("AnimState", 4);
             }

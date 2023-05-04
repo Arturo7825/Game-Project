@@ -3,6 +3,7 @@ ScriptsOnlyBuild:
     Assembly-CSharp.dll:
     - AnimationController
     - CameraSystem
+    - Gun
     - Ladder
     - LaserSpawner
     - LeftLaser
@@ -19,6 +20,7 @@ ScriptsOnlyBuild:
     - UnityEditor.U2D.Animation.BoneGizmo
     Unity.2D.IK.Editor.dll:
     - UnityEditor.U2D.IK.IKEditorManager
+    - UnityEditor.U2D.IK.IKGizmos
     Unity.2D.IK.Runtime.dll:
     - UnityEditor.U2D.IK.IKEditorManagerHelper
     Unity.2D.Tilemap.Editor.dll:
@@ -34,8 +36,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -86,11 +90,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 2128}
     - Class: 114
-      Script: {instanceID: 2528}
-    - Class: 114
       Script: {instanceID: 2948}
-    - Class: 114
-      Script: {instanceID: 2950}
     - Class: 114
       Script: {instanceID: 3078}
     - Class: 114
@@ -103,6 +103,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 4704}
     - Class: 114
       Script: {instanceID: 5698}
+    - Class: 114
+      Script: {instanceID: 25342}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -145,15 +147,74 @@ ScriptsOnlyBuild:
     - Class: 104
       Script: {instanceID: 0}
     - Class: 114
+      Script: {instanceID: 1626}
+    - Class: 114
       Script: {instanceID: 1778}
     - Class: 114
       Script: {instanceID: 2128}
     - Class: 114
+      Script: {instanceID: 2528}
+    - Class: 114
       Script: {instanceID: 2948}
+    - Class: 114
+      Script: {instanceID: 2950}
+    - Class: 114
+      Script: {instanceID: 3332}
     - Class: 114
       Script: {instanceID: 3826}
     - Class: 114
       Script: {instanceID: 3998}
+    - Class: 114
+      Script: {instanceID: 4704}
+    - Class: 114
+      Script: {instanceID: 5698}
+    - Class: 114
+      Script: {instanceID: 25342}
+    - Class: 115
+      Script: {instanceID: 0}
+    - Class: 157
+      Script: {instanceID: 0}
+    - Class: 196
+      Script: {instanceID: 0}
+    - Class: 212
+      Script: {instanceID: 0}
+    - Class: 213
+      Script: {instanceID: 0}
+    Assets/Scenes/Level3.unity:
+    - Class: 1
+      Script: {instanceID: 0}
+    - Class: 4
+      Script: {instanceID: 0}
+    - Class: 20
+      Script: {instanceID: 0}
+    - Class: 21
+      Script: {instanceID: 0}
+    - Class: 28
+      Script: {instanceID: 0}
+    - Class: 48
+      Script: {instanceID: 0}
+    - Class: 50
+      Script: {instanceID: 0}
+    - Class: 61
+      Script: {instanceID: 0}
+    - Class: 74
+      Script: {instanceID: 0}
+    - Class: 81
+      Script: {instanceID: 0}
+    - Class: 82
+      Script: {instanceID: 0}
+    - Class: 83
+      Script: {instanceID: 0}
+    - Class: 91
+      Script: {instanceID: 0}
+    - Class: 95
+      Script: {instanceID: 0}
+    - Class: 104
+      Script: {instanceID: 0}
+    - Class: 114
+      Script: {instanceID: 1778}
+    - Class: 114
+      Script: {instanceID: 2128}
     - Class: 114
       Script: {instanceID: 4704}
     - Class: 115
@@ -508,7 +569,7 @@ ScriptsOnlyBuild:
     className: LoseBarrier
   - hash:
       serializedVersion: 2
-      Hash: 8f344bb9a2063e1eb63add0198485c15
+      Hash: 649ab7a506664bf85e6ab61b5abdc84d
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RangedEnemy
@@ -586,7 +647,7 @@ ScriptsOnlyBuild:
     className: MarkerTrack
   - hash:
       serializedVersion: 2
-      Hash: fd458e50c2e55d7cc24e11f11ff97a87
+      Hash: 9188da16a2ea23f6d83f17f3e1f2d452
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LaserSpawner
@@ -664,7 +725,7 @@ ScriptsOnlyBuild:
     className: BaseInput
   - hash:
       serializedVersion: 2
-      Hash: 55a8c6c2b667ff0e338c5e308a3d266e
+      Hash: b394cd63ef7e4519b9e66772a10dc55c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: MeleeEnemy
@@ -902,6 +963,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LeftLaser
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Gun
   platform: 19
   scenePathNames:
   - Assets/Scenes/Level1.unity
@@ -909,5 +976,6 @@ ScriptsOnlyBuild:
   - Assets/Scenes/Win.unity
   - Assets/Scenes/Level2.unity
   - Assets/Scenes/Level4.unity
-  playerPath: C:/Users/ohassan/Desktop/Unity/Game-Design-Group-Project/Game Design
+  - Assets/Scenes/Level3.unity
+  playerPath: C:/Users/hoove/OneDrive/Documents/Game-Design-Group-Project/Game Design
     Group Project/Game Design Group Project.exe

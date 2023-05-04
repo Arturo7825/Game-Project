@@ -15,6 +15,8 @@ public class MeleeEnemy : MonoBehaviour
     public AudioSource Die;
     public float AggroDistance;
     public Rigidbody2D rigidbody;
+    public AudioSource Swing;
+    bool standing = false;
     //public float initialPosY;
     //static float y = initialPosY;
 
@@ -48,11 +50,13 @@ public class MeleeEnemy : MonoBehaviour
         // print("x: "+ x);
         // print("playerPosX: "+playerPosX);
         //print(differenceY);
-        if (differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0)
+        if (differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0 || standing == true)
         {
+            standing = true;
             animator.SetInteger("AnimState", 1);
             if ( count == 40)
             {
+                Swing.Play();
                 animator.SetInteger("AnimState", 2);
                 bool hit = MeleeDeathZone.getHit();
                 //print("differenceX: " + differenceX);
@@ -63,6 +67,7 @@ public class MeleeEnemy : MonoBehaviour
                     LevelManager.lose();
                 }
                     count = 0;
+                    standing = false;
                 }
             else
             {
@@ -75,6 +80,7 @@ public class MeleeEnemy : MonoBehaviour
             count = 0;
             x += 0.03f;
             transform.localRotation = Quaternion.Euler(0, 180, 0);
+            standing = false;
         }
         else if (x > playerPosX && differenceX < AggroDistance)
         {
@@ -83,10 +89,12 @@ public class MeleeEnemy : MonoBehaviour
             //print("b");
             x -= 0.03f;
             transform.localRotation = Quaternion.Euler(0, 360, 0);
+            standing = false;
         }
         else if (differenceX >= AggroDistance)
         {
             animator.SetInteger("AnimState", 1);
+            standing = false;
         }
         Vector2 target = new Vector2(x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, target, 1);

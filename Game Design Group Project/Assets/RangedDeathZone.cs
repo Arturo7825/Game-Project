@@ -15,7 +15,10 @@ public class RangedDeathZone : MonoBehaviour
 
     public void OnTriggerExit2D(Collider2D collision)
     {
-        hit = false;
+        if(collision.gameObject.tag == "Player")
+        {
+            hit = false;
+        }
     }
 
     public static bool getHit()

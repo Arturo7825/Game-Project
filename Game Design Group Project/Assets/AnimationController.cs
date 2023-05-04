@@ -72,7 +72,7 @@ public class AnimationController : MonoBehaviour
         //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         if (onLadder == true && Input.GetKey(KeyCode.W))
         {
-            y += 0.002f;
+            y += 2f * Time.deltaTime;
             rigidbody.velocity = Vector3.zero;
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);

@@ -14,20 +14,6 @@ public class LaserSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (AnimationController.getRight() == false && canSwitchLeft == true)
-        {
-            Vector2 target = new Vector2(transform.position.x - 1, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            canSwitchLeft = false;
-            canSwitchRight = true;
-        }
-        else if (AnimationController.getRight() == true && canSwitchRight == true)
-        {
-            Vector2 target = new Vector2(transform.position.x + 1, transform.position.y);
-            transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            canSwitchLeft = true;
-            canSwitchRight = false;
-        }
         count += 20f * Time.deltaTime;
         if (Input.GetKey(KeyCode.G))
         {
@@ -37,11 +23,12 @@ public class LaserSpawner : MonoBehaviour
                 count = 0;
                 if (AnimationController.getRight() == true)
                 {
-                    Instantiate(RightLaser, SpawnPoint.position, SpawnPoint.rotation); 
+                    Instantiate(RightLaser, SpawnPoint.position + new Vector3(-0.9f,0,0), SpawnPoint.rotation); 
                 }
                 else
                 {
-                    Instantiate(LeftLaser, SpawnPoint.position, SpawnPoint.rotation); 
+                    //Instantiate(LeftLaser, SpawnPoint.position + new Vector3(0.9f,0,0), SpawnPoint.rotation); 
+                    Instantiate(LeftLaser, SpawnPoint.position + new Vector3(-2.7f,0,0), SpawnPoint.rotation); 
                 }
             }
         }
