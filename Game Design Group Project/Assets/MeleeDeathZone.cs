@@ -25,4 +25,9 @@ public class MeleeDeathZone : MonoBehaviour
     {
         return hit;
     }
+
+    public static void meleeMakeFalse()
+    {
+        hit = false;
+    }
 }

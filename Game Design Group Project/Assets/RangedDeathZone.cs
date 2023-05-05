@@ -25,4 +25,9 @@ public class RangedDeathZone : MonoBehaviour
     {
         return hit;
     }
+
+    public static void rangedMakeFalse()
+    {
+        hit = false;
+    }
 }

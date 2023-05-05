@@ -9,11 +9,23 @@ public class LevelManager : MonoBehaviour
     static bool OnLose = false;
     static int transitionNumber;
     static int levelNumber;
-    static string[] levels = { "Level1", "Level2", "Level3"};
+    static string[] levels = { "Level1", "Level2", "Level3", "Level4"};
 
     public static void win(int newTransitionNumber)
     {
-        SceneManager.LoadScene("Win");
+        if (newTransitionNumber == 3)
+        {
+            SceneManager.LoadScene("PreBoss");
+        }
+        else
+        {
+            SceneManager.LoadScene("Win");
+        }
+        Ladder.makeFalse();
+        MeleeDeathZone.meleeMakeFalse();
+        RangedDeathZone.rangedMakeFalse();
+        Gun.GunReset();
+        //LaserSpawner.SpawnerReset();
         OnWin = true;
         transitionNumber = newTransitionNumber;
 
@@ -22,6 +34,11 @@ public class LevelManager : MonoBehaviour
     public static void lose(int newLevelNumber)
     {
         SceneManager.LoadScene("Lose");
+        Ladder.makeFalse();
+        MeleeDeathZone.meleeMakeFalse();
+        RangedDeathZone.rangedMakeFalse();
+        Gun.GunReset();
+        //LaserSpawner.SpawnerReset();
         OnLose = true;
         levelNumber = newLevelNumber;
     }
@@ -30,12 +47,20 @@ public class LevelManager : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.G) && OnWin == true)
         {
+            Ladder.makeFalse();
+            MeleeDeathZone.meleeMakeFalse();
+            RangedDeathZone.rangedMakeFalse();
+            Gun.GunReset();
             SceneManager.LoadScene(levels[transitionNumber]);
             OnWin = false;
         }
         else if (Input.GetKey(KeyCode.G) && OnLose == true)
         {
-            SceneManager.LoadScene(levels[transitionNumber]);
+            Ladder.makeFalse();
+            MeleeDeathZone.meleeMakeFalse();
+            RangedDeathZone.rangedMakeFalse();
+            Gun.GunReset();
+            SceneManager.LoadScene(levels[levelNumber]);
             OnLose = false;
         }
     }

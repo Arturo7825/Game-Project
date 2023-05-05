@@ -33,4 +33,10 @@ public class LaserSpawner : MonoBehaviour
             }
         }
     }
+
+    public static void SpawnerReset()
+    {
+        canSwitchLeft = true;
+        canSwitchRight = false;
+    }
 }

@@ -966,6 +966,7 @@ MonoBehaviour:
   Die: {fileID: 456617048}
   Charging: {fileID: 456617045}
   Fire: {fileID: 456617044}
+  levelNumber: 1
 --- !u!95 &456617050
 Animator:
   serializedVersion: 3
@@ -1950,6 +1951,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 702226374}
   Swing: {fileID: 702226372}
+  levelNumber: 1
 --- !u!95 &702226377
 Animator:
   serializedVersion: 3
@@ -2371,7 +2373,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2382,7 +2384,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72, y: 0.96}
+  m_Size: {x: 0.72, y: 0.7}
   m_EdgeRadius: 0
 --- !u!114 &852711552
 MonoBehaviour:
@@ -2398,6 +2400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 8
   jumpWidth: 1.8
+  levelNumber: 1
   rigidbody: {fileID: 852711550}
   dieLevel: -6
   jump: {fileID: 852711549}
@@ -5005,6 +5008,7 @@ MonoBehaviour:
   Die: {fileID: 1885818827}
   Charging: {fileID: 1885818824}
   Fire: {fileID: 1885818823}
+  levelNumber: 1
 --- !u!95 &1885818829
 Animator:
   serializedVersion: 3
@@ -5771,6 +5775,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 2109774759}
   Swing: {fileID: 2109774757}
+  levelNumber: 1
 --- !u!95 &2109774762
 Animator:
   serializedVersion: 3

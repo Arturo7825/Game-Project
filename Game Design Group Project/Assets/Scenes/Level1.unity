@@ -1323,7 +1323,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 839905792}
   Swing: {fileID: 839905798}
-  maxDifY: 3.2
+  levelNumber: 0
 --- !u!95 &839905795
 Animator:
   serializedVersion: 3
@@ -1853,7 +1853,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 861134094}
   Swing: {fileID: 861134092}
-  maxDifY: 3.2
+  levelNumber: 0
 --- !u!95 &861134097
 Animator:
   serializedVersion: 3
@@ -2217,7 +2217,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 904261649}
   Swing: {fileID: 904261647}
-  maxDifY: 3.2
+  levelNumber: 0
 --- !u!95 &904261652
 Animator:
   serializedVersion: 3
@@ -3944,7 +3944,7 @@ MonoBehaviour:
   AggroDistance: 8
   rigidbody: {fileID: 1986486852}
   Swing: {fileID: 1986486855}
-  maxDifY: 3.2
+  levelNumber: 0
 --- !u!50 &1986486852
 Rigidbody2D:
   serializedVersion: 4
@@ -4377,6 +4377,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   jumpHeight: 8
   jumpWidth: 1.8
+  levelNumber: 0
   rigidbody: {fileID: 2064586685}
   dieLevel: -7
   jump: {fileID: 2064586687}
@@ -4414,7 +4415,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -0.15}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -4425,7 +4426,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.72, y: 0.96}
+  m_Size: {x: 0.72, y: 0.8}
   m_EdgeRadius: 0
 --- !u!82 &2064586687
 AudioSource:

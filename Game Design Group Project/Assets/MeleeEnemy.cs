@@ -17,6 +17,7 @@ public class MeleeEnemy : MonoBehaviour
     public Rigidbody2D rigidbody;
     public AudioSource Swing;
     bool standing = false;
+    public int levelNumber;
     //public float maxDifY;
     //public float initialPosY;
     //static float y = initialPosY;
@@ -49,8 +50,6 @@ public class MeleeEnemy : MonoBehaviour
         // {
         //     playerPosX = playerPosX * -1;
         // }
-        // print("x: "+ x);
-        // print("playerPosX: "+playerPosX);
         //differenceX < 1.66
         //differentY < 3.2
         //if (differenceX < 1.66 && differenceY < maxDifY && rigidbody.velocity.y >= 0 || standing == true)
@@ -69,7 +68,7 @@ public class MeleeEnemy : MonoBehaviour
                 if (hit == true && differenceX < 1.66 && differenceY < 3.2 && rigidbody.velocity.y >= 0)
                 {
                     Die.Play();
-                    LevelManager.lose();
+                    LevelManager.lose(levelNumber);
                 }
                     count = 0;
                     standing = false;

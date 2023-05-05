@@ -31,4 +31,13 @@ public class Gun : MonoBehaviour
             }
         }
     }
+
+    public static void GunReset()
+    {
+        if(Input.GetKey(KeyCode.A))
+        {
+            canSwitchLeft = true;
+            canSwitchRight = false;
+        }
+    }
 }
