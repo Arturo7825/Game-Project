@@ -15,8 +15,8 @@ public class Boss : MonoBehaviour
     public AudioSource Die;
     public Rigidbody2D rigidbody;
     public AudioSource Swing;
-    bool standing = false;
     public int levelNumber;
+    static bool right = false;
     //public float maxDifY;
     //public float initialPosY;
     //static float y = initialPosY;
@@ -39,8 +39,8 @@ public class Boss : MonoBehaviour
             animator.SetInteger("AnimState", 1);
             transform.localRotation = Quaternion.Euler(0, 180, 0);
             count = 0;
-            x += 0.02f;
-            standing = false;
+            x += 0.015f;
+            right = true;
         }
         else if (x > playerPosX)
         {
@@ -48,10 +48,15 @@ public class Boss : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 360, 0);
             count = 0;
             //print("b");
-            x -= 0.02f;
-            standing = false;
+            x -= 0.015f;
+            right = false;
         }
         Vector2 target = new Vector2(x, transform.position.y);
         transform.position = Vector2.MoveTowards(transform.position, target, 1);
+    }
+
+    public static bool getRight()
+    {
+        return right;
     }
 }
