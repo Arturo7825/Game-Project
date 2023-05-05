@@ -34,7 +34,12 @@ public class Gun : MonoBehaviour
 
     public static void GunReset()
     {
-        if(Input.GetKey(KeyCode.A))
+        if(Input.GetKey(KeyCode.A) || AnimationController.getRight() == false)
+        {
+            canSwitchLeft = true;
+            canSwitchRight = false;
+        }
+        else if(Input.GetKey(KeyCode.D) || AnimationController.getRight() == true)
         {
             canSwitchLeft = true;
             canSwitchRight = false;

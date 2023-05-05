@@ -14,9 +14,9 @@ public class AnimationController : MonoBehaviour
     static int jumpCount = 0;
     static int slowFallCount = 0;
     public Rigidbody2D rigidbody;
-    static bool right = true;
     //static int number = 0;
     static bool falling = false;
+    static bool right = true;
     public float dieLevel;
     public AudioSource jump;
     Vector2 position;
