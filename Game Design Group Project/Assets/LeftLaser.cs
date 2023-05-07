@@ -13,7 +13,11 @@ public class LeftLaser : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != "Player" && collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Trigger" && Boss.getCharging() == true)
+        {
+            Destroy (this.gameObject);
+        }
+        else if (collision.gameObject.tag != "Player" && collision.gameObject.tag == "Enemy")
         {
             Destroy (this.gameObject);
             Destroy(collision.gameObject);

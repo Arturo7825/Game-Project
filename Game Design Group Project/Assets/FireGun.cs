@@ -6,42 +6,17 @@ public class FireGun : MonoBehaviour
 {
     static bool canSwitchLeft = false;
     static bool canSwitchRight = true;
-    void Update()
+    static int state = 0;
+    bool first = true;
+    Animator animator;
+    void FixedUpdate()
     {
-        bool right = Boss.getRight();
-        if (right == true)
-        {
-            //if (canSwitchRight == true)
-            if (canSwitchLeft == true)
-            {
-                Vector2 target = new Vector2(transform.position.x - 2.7f, transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, target, 1);
-                transform.localRotation = Quaternion.Euler(0, 180, 0);
-                transform.localRotation = Quaternion.Euler(0, 0, 0);
-                canSwitchLeft = true;
-                canSwitchRight = false;
-            }
-        }
-        else if(right == false)
-        {
-            //if (canSwitchLeft == true)
-            if (canSwitchRight == true)
-            {
-                Vector2 target = new Vector2(transform.position.x + 2.7f, transform.position.y);
-                transform.position = Vector2.MoveTowards(transform.position, target, 1);
-                transform.localRotation = Quaternion.Euler(0, 360, 0);
-                canSwitchLeft = false;
-                canSwitchRight = true;
-            }
-        }
+        print(state);
+        animator = GetComponent<Animator>();
+        animator.SetInteger("AnimState", state);
     }
-
-    public static void FireGunReset()
+    public static void setState(int num)
     {
-        if(Input.GetKey(KeyCode.A))
-        {
-            canSwitchLeft = true;
-            canSwitchRight = false;
-        }
+        state = num;
     }
 }

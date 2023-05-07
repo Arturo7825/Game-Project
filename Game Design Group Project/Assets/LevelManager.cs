@@ -25,7 +25,8 @@ public class LevelManager : MonoBehaviour
         MeleeDeathZone.meleeMakeFalse();
         RangedDeathZone.rangedMakeFalse();
         Gun.GunReset();
-        //LaserSpawner.SpawnerReset();
+        WallSensor.sensorMakeFalse();
+        Boss.bossReset();
         OnWin = true;
         transitionNumber = newTransitionNumber;
 
@@ -38,7 +39,8 @@ public class LevelManager : MonoBehaviour
         MeleeDeathZone.meleeMakeFalse();
         RangedDeathZone.rangedMakeFalse();
         Gun.GunReset();
-        //LaserSpawner.SpawnerReset();
+        WallSensor.sensorMakeFalse();
+        Boss.bossReset();
         OnLose = true;
         levelNumber = newLevelNumber;
     }
@@ -51,7 +53,9 @@ public class LevelManager : MonoBehaviour
             MeleeDeathZone.meleeMakeFalse();
             RangedDeathZone.rangedMakeFalse();
             Gun.GunReset();
+            WallSensor.sensorMakeFalse();
             SceneManager.LoadScene(levels[transitionNumber]);
+            Boss.bossReset();
             OnWin = false;
         }
         else if (Input.GetKey(KeyCode.G) && OnLose == true)
@@ -60,7 +64,9 @@ public class LevelManager : MonoBehaviour
             MeleeDeathZone.meleeMakeFalse();
             RangedDeathZone.rangedMakeFalse();
             Gun.GunReset();
+            WallSensor.sensorMakeFalse();
             SceneManager.LoadScene(levels[levelNumber]);
+            Boss.bossReset();
             OnLose = false;
         }
     }

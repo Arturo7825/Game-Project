@@ -106,9 +106,9 @@ TextureImporter:
       name: Fire Gun 2_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 75
-        width: 62
+        width: 14
         height: 20
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -127,9 +127,9 @@ TextureImporter:
       name: Fire Gun 2_1
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 58
-        width: 62
+        width: 14
         height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -148,9 +148,9 @@ TextureImporter:
       name: Fire Gun 2_2
       rect:
         serializedVersion: 2
-        x: 0
+        x: 48
         y: 40
-        width: 61
+        width: 13
         height: 17
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -171,7 +171,7 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 20
-        width: 61
+        width: 47
         height: 19
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
