@@ -13,7 +13,12 @@ public class RightLaser : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Trigger" && Boss.getCharging() == true)
+        if (collision.gameObject.tag == "Boss")
+        {
+            Destroy (this.gameObject);
+            Boss.shot();
+        }
+        else if (collision.gameObject.tag == "Trigger" && Boss.getCharging() == true)
         {
             Destroy (this.gameObject);
         }

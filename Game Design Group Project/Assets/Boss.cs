@@ -22,10 +22,15 @@ public class Boss : MonoBehaviour
     static bool sideSwitch = false;
     static bool attacking = false;
     public GameObject FireWall;
+    public GameObject FireBeam;
+    //static GameObject FireBeam = GameObject.FindWithTag("Beam");
     static bool charging = false;
+    static bool firing = false;
     float chargingCount = 0;
     //Random r = new Random();
     int rnum = 0;
+    static bool hit = false;
+    static int health = 15;
     //public float maxDifY;
     //public float initialPosY;
     //static float y = initialPosY;
@@ -35,7 +40,9 @@ public class Boss : MonoBehaviour
     {
         if (attacking == false)
         {
+            hit = false;
             FireWall.SetActive(false);
+            FireBeam.SetActive(false);
             count += Time.deltaTime * 300;
             if (first == true)
             {
@@ -86,31 +93,35 @@ public class Boss : MonoBehaviour
             if (attacking == false)
             {
                 attacking = true;
-                //rnum = Random.Range(0, 2);
+                rnum = Random.Range(0, 2);
             }
             count = 0;
-            rnum = 0;
+            chargingCount += Time.deltaTime * 300;
+            FireGun.setState(1);
+            if (!Charge.isPlaying)
+            {
+                Charge.Play();
+            }
+            if (chargingCount >= 400)
+            {
+                Charge.Stop();
+                if (!Fire.isPlaying)
+                {
+                    Fire.Play();
+                }
+                FireGun.setState(2);
+            }
             if(rnum == 0)
             {
                 if (WallSensor.getTouchingWall() == false)
                 {
-                    chargingCount += Time.deltaTime * 300;
-                    FireGun.setState(1);
-                    if (!Charge.isPlaying)
-                    {
-                        Charge.Play();
-                    }
+                    //Gun charging place
                     charging = true;
                     FireWall.SetActive(true);
                     Vector2 target;
+                    //Gun firing place
                     if (chargingCount >= 400)
                     {
-                        Charge.Stop();
-                        if (!Fire.isPlaying)
-                        {
-                            Fire.Play();
-                        }
-                        FireGun.setState(2);
                         if (right == false)
                         {
                             target = new Vector2(transform.position.x-0.1f, transform.position.y);
@@ -129,6 +140,25 @@ public class Boss : MonoBehaviour
                     attacking = false;
                     charging = false;
                     chargingCount = 0;
+                }
+            }
+            else
+            {
+                if (chargingCount >= 400)
+                {
+                    if (hit == false)
+                    {
+                        FireBeam.SetActive(true);
+                        firing = true;
+                    }
+                    else
+                    {
+                        attacking = false;
+                        hit = false;
+                        Fire.Stop();
+                        FireGun.setState(3);
+                        chargingCount = 0;
+                    }
                 }
             }
         }
@@ -153,5 +183,26 @@ public class Boss : MonoBehaviour
         charging = false;
         count = 0;
         first = true;
+    }
+    public static bool getFiring()
+    {
+        return firing;
+    }
+    public static bool getHit()
+    {
+        return hit;
+    }
+    public static void resetHit()
+    {
+        hit = false;
+    }
+    public static void shot()
+    {
+        hit = true;
+        health--;
+        if (firing == true)
+        {
+            firing = false;
+        }
     }
 }

@@ -7,6 +7,10 @@ TagManager:
   - Enemy
   - Trigger
   - Barrier
+  - Laser
+  - Beam
+  - FireGun
+  - Boss
   layers:
   - Default
   - TransparentFX
