@@ -15,7 +15,8 @@ public class Boss : MonoBehaviour
     Vector2 position;
     public AudioSource Die;
     public Rigidbody2D rigidbody;
-    public AudioSource Swing;
+    public AudioSource Charge;
+    public AudioSource Fire;
     public int levelNumber;
     static bool right = false;
     static bool sideSwitch = false;
@@ -95,11 +96,20 @@ public class Boss : MonoBehaviour
                 {
                     chargingCount += Time.deltaTime * 300;
                     FireGun.setState(1);
+                    if (!Charge.isPlaying)
+                    {
+                        Charge.Play();
+                    }
                     charging = true;
                     FireWall.SetActive(true);
                     Vector2 target;
                     if (chargingCount >= 400)
                     {
+                        Charge.Stop();
+                        if (!Fire.isPlaying)
+                        {
+                            Fire.Play();
+                        }
                         FireGun.setState(2);
                         if (right == false)
                         {
@@ -114,6 +124,7 @@ public class Boss : MonoBehaviour
                 }
                 else
                 {
+                    Fire.Stop();
                     FireGun.setState(3);
                     attacking = false;
                     charging = false;

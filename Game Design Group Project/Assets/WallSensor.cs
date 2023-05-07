@@ -14,7 +14,7 @@ public class WallSensor : MonoBehaviour
         {
             touchingWall = true;
         }
-        else if (collision.gameObject.tag == "Player")
+        else if (collision.gameObject.tag == "Player" && Boss.getCharging() == true)
         {
             Die.Play();
             LevelManager.lose(levelNumber);

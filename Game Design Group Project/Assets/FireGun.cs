@@ -11,7 +11,6 @@ public class FireGun : MonoBehaviour
     Animator animator;
     void FixedUpdate()
     {
-        print(state);
         animator = GetComponent<Animator>();
         animator.SetInteger("AnimState", state);
     }
