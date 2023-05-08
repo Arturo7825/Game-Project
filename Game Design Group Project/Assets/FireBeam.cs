@@ -32,7 +32,10 @@ public class FireBeam : MonoBehaviour
         {
             touching = true;
             Die.Play();
-            //LevelManager.lose(3);
+            LevelManager.lose(3);
+            angle = -20;
+            transform.localRotation = Quaternion.Euler(0, 0, angle);
+            FireGun.setState(3);
         }
     }
 

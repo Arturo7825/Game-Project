@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/PreBoss.unity
     guid: c50a283658c129d4191abf174396829a
+  - enabled: 1
+    path: Assets/Scenes/FinalWin.unity
+    guid: bda55466c86671a42ab532894c94f317
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

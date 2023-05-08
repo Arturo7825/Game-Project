@@ -18,6 +18,7 @@ public class WallSensor : MonoBehaviour
         {
             Die.Play();
             LevelManager.lose(levelNumber);
+            FireGun.setState(3);
         }
     }
 

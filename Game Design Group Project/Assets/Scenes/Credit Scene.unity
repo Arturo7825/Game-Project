@@ -235,7 +235,7 @@ GameObject:
   - component: {fileID: 1043352107}
   - component: {fileID: 1043352106}
   m_Layer: 5
-  m_Name: You Win
+  m_Name: Credits
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

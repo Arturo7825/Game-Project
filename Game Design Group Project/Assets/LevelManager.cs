@@ -9,13 +9,17 @@ public class LevelManager : MonoBehaviour
     static bool OnLose = false;
     static int transitionNumber;
     static int levelNumber;
-    static string[] levels = { "Level1", "Level2", "Level3", "Level4"};
+    static string[] levels = { "Level1", "Level2", "Level3", "Level4", "Level1"};
 
     public static void win(int newTransitionNumber)
     {
         if (newTransitionNumber == 3)
         {
             SceneManager.LoadScene("PreBoss");
+        }
+        else if (newTransitionNumber == 4)
+        {
+            SceneManager.LoadScene("FinalWin");
         }
         else
         {
@@ -47,7 +51,7 @@ public class LevelManager : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKey(KeyCode.G) && OnWin == true)
+        if (Input.GetKey(KeyCode.V) && OnWin == true)
         {
             Ladder.makeFalse();
             MeleeDeathZone.meleeMakeFalse();
@@ -58,7 +62,7 @@ public class LevelManager : MonoBehaviour
             Boss.bossReset();
             OnWin = false;
         }
-        else if (Input.GetKey(KeyCode.G) && OnLose == true)
+        else if (Input.GetKey(KeyCode.V) && OnLose == true)
         {
             Ladder.makeFalse();
             MeleeDeathZone.meleeMakeFalse();

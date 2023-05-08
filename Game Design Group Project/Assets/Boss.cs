@@ -17,6 +17,8 @@ public class Boss : MonoBehaviour
     public Rigidbody2D rigidbody;
     public AudioSource Charge;
     public AudioSource Fire;
+    public AudioSource BeamCharge;
+    public AudioSource BeamFiring;
     public int levelNumber;
     static bool right = false;
     static bool sideSwitch = false;
@@ -92,25 +94,35 @@ public class Boss : MonoBehaviour
         {
             if (attacking == false)
             {
+                animator.SetInteger("AnimState", 0);
                 attacking = true;
                 rnum = Random.Range(0, 2);
             }
             count = 0;
-            chargingCount += Time.deltaTime * 300;
+            
             FireGun.setState(1);
-            if (!Charge.isPlaying)
+            if (rnum == 0 && !Charge.isPlaying && chargingCount == 0)
             {
                 Charge.Play();
             }
-            if (chargingCount >= 400)
+            else if (rnum == 1 && !BeamCharge.isPlaying && chargingCount == 0)
             {
-                Charge.Stop();
-                if (!Fire.isPlaying)
-                {
-                    Fire.Play();
-                }
+                BeamCharge.Play();
+            }
+            chargingCount += Time.deltaTime * 300;
+            if (chargingCount >= 200 && rnum == 1 && !BeamFiring.isPlaying)
+            {
+                //BeamCharge.Stop();
+                //BeamFiring.Play();
                 FireGun.setState(2);
             }
+            else if (chargingCount >= 200 && rnum == 0 && !Fire.isPlaying)
+            {
+                //Charge.Stop();
+                //Fire.Play();
+                FireGun.setState(2);
+            }
+            
             if(rnum == 0)
             {
                 if (WallSensor.getTouchingWall() == false)
@@ -120,8 +132,14 @@ public class Boss : MonoBehaviour
                     FireWall.SetActive(true);
                     Vector2 target;
                     //Gun firing place
-                    if (chargingCount >= 400)
+                    if (chargingCount >= 200)
                     {
+                        Charge.Stop();
+                        if (!Fire.isPlaying)
+                        {
+                            Fire.Play();
+                        }
+                        animator.SetInteger("AnimState", 1);
                         if (right == false)
                         {
                             target = new Vector2(transform.position.x-0.1f, transform.position.y);
@@ -144,8 +162,13 @@ public class Boss : MonoBehaviour
             }
             else
             {
-                if (chargingCount >= 400)
+                if (chargingCount >= 200)
                 {
+                    BeamCharge.Stop();
+                    if (!BeamFiring.isPlaying)
+                    {
+                        BeamFiring.Play();
+                    }
                     if (hit == false)
                     {
                         FireBeam.SetActive(true);
@@ -155,7 +178,7 @@ public class Boss : MonoBehaviour
                     {
                         attacking = false;
                         hit = false;
-                        Fire.Stop();
+                        BeamFiring.Stop();
                         FireGun.setState(3);
                         chargingCount = 0;
                     }
@@ -183,6 +206,7 @@ public class Boss : MonoBehaviour
         charging = false;
         count = 0;
         first = true;
+        health = 15;
     }
     public static bool getFiring()
     {
@@ -196,10 +220,18 @@ public class Boss : MonoBehaviour
     {
         hit = false;
     }
+    public static void resetHealth()
+    {
+        health = 15;
+    }
     public static void shot()
     {
         hit = true;
         health--;
+        if (health == 0)
+        {
+            LevelManager.win(4);
+        }
         if (firing == true)
         {
             firing = false;
