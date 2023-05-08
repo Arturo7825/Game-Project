@@ -5,11 +5,11 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    static bool OnWin = false;
+    static bool OnWin = true;
     static bool OnLose = false;
     static int transitionNumber;
     static int levelNumber;
-    static string[] levels = { "Level1", "Level2", "Level3", "Level4", "Level1"};
+    static string[] levels = { "Level1", "Level2", "Level3", "Level4", "Start"};
 
     public static void win(int newTransitionNumber)
     {
