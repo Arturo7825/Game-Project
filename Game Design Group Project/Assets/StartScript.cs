@@ -9,7 +9,7 @@ public class StartScript : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.V))
         {
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Level0");
         }
     }
 }
