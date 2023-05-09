@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1680
     height: 967
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Project
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 542}
+  m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -46,9 +46,9 @@ MonoBehaviour:
     width: 1680
     height: 917
   m_MinSize: {x: 678, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 124
+  controlID: 48
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -68,8 +68,8 @@ MonoBehaviour:
     y: 0
     width: 450
     height: 917
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
@@ -94,8 +94,8 @@ MonoBehaviour:
     y: 0
     width: 299
     height: 645
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -223,10 +223,10 @@ MonoBehaviour:
     y: 0
     width: 1230
     height: 917
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 59
+  controlID: 18
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,10 +248,10 @@ MonoBehaviour:
     y: 0
     width: 1230
     height: 645
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 60
+  controlID: 19
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -498,13 +498,13 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/Artwork
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/Artwork
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ohassan\Desktop\Unity\Game-Design-Group-Project\Game
     Design Group Project
@@ -512,9 +512,9 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: da470000
-    m_LastClickedID: 18394
-    m_ExpandedIDs: 00000000cc47000000ca9a3b
+    m_SelectedIDs: 8a440000
+    m_LastClickedID: 17546
+    m_ExpandedIDs: 000000008444000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -542,7 +542,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000cc470000
+    m_ExpandedIDs: 0000000084440000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -663,9 +663,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 0a750000
       m_LastClickedID: 0
-      m_ExpandedIDs: fecbffff24ccffff02d1ffff1ed1ffff6cd1ffff40d2ffff86d2ffffd4dcffff02ddffff0adeffff58deffffbee2ffffc4e2ffffc8e2ffffd4e2ffff28e3ffffb2e3fffff4e3fffff0e4ffff68e5ffff80e5ffff86e6ffff8ae6ffff96e6ffff9ae6ffffa4e6ffffa8e6ffffaee6ffffb2e6ffffb8e6ffff06f0ffff28f0ffff18f1ffff7af1ffff92f1ffff98f1ffffa0f1ffffa8f1ffffb0f1ffffb8f1ffffc0f1ffffc8f1ffffd0f1ffffd8f1fffff2f1ffffbcf2ffff5af3ffffbef3ffffd6f3ffffd8f3ffffdcf3ffffe0f3ffffe4f3ffffe8f3ffffecf3fffff0f3fffff4f3fffff8f3ffff9af4fffff2f4ffff0af5ffff14f6ffff1cf6ffff24f6ffff2cf6ffff3af6ffff42f6ffff4cf6ffff60f6ffff6ef6ffff1af8fffffcf8ffff8a6500009e6500000866000062730000c87300000e740000e87600003e7700007e770000a8890000f48a00005e8b000014af000024af000036af0000ceb50000f8b50000
+      m_ExpandedIDs: 22edffff9aeeffff4ef3ffff08f5fffff4f7ffff0cf8ffff16f9ffff1ef9ffff2ef9ffff36f9ffff44f9ffff4cf9ffff56f9ffff68f9ffff7af9ffff82f9ffff8efaffff40fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -725,9 +725,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -3.144887, y: -1.7327878, z: -1084.6561}
+    m_Target: {x: -3.1305323, y: -1.5244081, z: -1088.8866}
     speed: 2
-    m_Value: {x: -3.144887, y: -1.7327878, z: -1084.6561}
+    m_Value: {x: -3.1305323, y: -1.5244081, z: -1088.8866}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -778,9 +778,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.2442465
+    m_Target: 11.957475
     speed: 2
-    m_Value: 10.2442465
+    m_Value: 11.957475
   m_Ortho:
     m_Target: 1
     speed: 2
