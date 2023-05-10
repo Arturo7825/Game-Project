@@ -10,7 +10,7 @@ public class LevelLoader : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.V))
         {
-            SceneManager.LoadScene("sceneName");
+            SceneManager.LoadScene(sceneName);
         }
     }
 }

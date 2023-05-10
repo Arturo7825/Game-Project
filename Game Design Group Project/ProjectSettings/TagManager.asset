@@ -11,6 +11,7 @@ TagManager:
   - Beam
   - FireGun
   - Boss
+  - CutsceneCollider
   layers:
   - Default
   - TransparentFX
