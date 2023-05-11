@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1680
     height: 967
   m_ShowMode: 4
-  m_Title: Game
+  m_Title: Scene
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 678, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 85
+  controlID: 23
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -150,7 +150,7 @@ MonoBehaviour:
     y: 0
     width: 1680
     height: 967
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
   m_TopViewHeight: 30
@@ -226,7 +226,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 19
+  controlID: 28
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -251,7 +251,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 20
+  controlID: 29
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -498,13 +498,13 @@ MonoBehaviour:
     m_SkipHidden: 1
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Artwork
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Artwork
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\ohassan\Desktop\Unity\Game-Design-Group-Project\Game
     Design Group Project
@@ -512,8 +512,8 @@ MonoBehaviour:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 84440000
-    m_LastClickedID: 17540
+    m_SelectedIDs: 8a440000
+    m_LastClickedID: 17546
     m_ExpandedIDs: 000000008444000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -594,7 +594,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 7}
+    m_ScrollPosition: {x: 0, y: 48}
     m_GridSize: 64
   m_SkipHiddenPackages: 1
   m_DirectoriesAreaWidth: 207
@@ -663,9 +663,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 380f0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 6ae5ffffbee5ffffeae6ffff84e7ffff8ce8ffffa4e8ffffaae9ffffaee9ffffbae9ffffbee9ffffc8e9ffffcce9ffffd2e9ffffe0e9ffffece9fffff2e9fffff6e9ffff58ebffff04eeffff7eeeffff96eeffffa0efffffa8efffffb8efffffc0efffffceefffffd6efffffe0effffff2efffff04f0ffff0cf0ffff1ef2ffff9cf6ffff0af7ffffe0f7ffff60f8ffff78f8ffff7ef9ffff82f9ffff8ef9ffff92f9ffff9cf9ffffa0f9ffffa6f9ffffb4f9ffffb8f9ffffc2f9ffff40fbffff
+      m_SelectedIDs: 88daffff
+      m_LastClickedID: -9592
+      m_ExpandedIDs: eadaffff3adbffff52dbffff88dcffff7edeffff52dfffff6adfffff28e0ffff5ce0fffffee0ffff74e1ffff8ce1ffff96e2ffff9ee2ffffaee2ffffb6e2ffffc4e2ffffcce2ffffd6e2ffffe6e2fffff6e2fffffee2ffff06e3ffff0ee3ffff1ae3ffffa0e3ffffb2e3ffffeee3ffff10e4ffff06f0ffff60f0ffffaef2ffff76f4ffffcaf4ffffdcf4fffff4f4ffff48f6ffff60f6ffff6af7ffff72f7ffff82f7ffff8af7ffff98f7ffffa0f7ffffaaf7ffffbaf7ffffcaf7ffffd6f7ffffe0f7ffffe8f7ffffd2f8fffff6f8ffff54f9ffff88faffff40fbffff94690000e0690000d6890000488a0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -725,9 +725,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -6.778257, y: -1.4672534, z: -1093.6711}
+    m_Target: {x: 9.9603615, y: 4.2766685, z: -1135.9039}
     speed: 2
-    m_Value: {x: -6.778257, y: -1.4672534, z: -1093.6711}
+    m_Value: {x: 9.9603615, y: 4.2766685, z: -1135.9039}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -778,9 +778,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 8.86233
+    m_Target: 21.045052
     speed: 2
-    m_Value: 8.86233
+    m_Value: 21.045052
   m_Ortho:
     m_Target: 1
     speed: 2
