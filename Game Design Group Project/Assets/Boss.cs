@@ -230,7 +230,7 @@ public class Boss : MonoBehaviour
         health--;
         if (health == 0)
         {
-            LevelManager.win(4);
+            LevelManager.win("Start", "FinalWin");
         }
         if (firing == true)
         {

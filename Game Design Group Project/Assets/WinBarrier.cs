@@ -4,9 +4,10 @@ using UnityEngine;
 
 public class WinBarrier : MonoBehaviour
 {
-    public int transitionNumber;
+    public string sceneName;
+    public string winName;
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        LevelManager.win(transitionNumber);
+        LevelManager.win(sceneName, winName);
     }
 }

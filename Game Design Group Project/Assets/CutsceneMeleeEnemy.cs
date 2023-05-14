@@ -33,4 +33,10 @@ public class CutsceneMeleeEnemy : MonoBehaviour
             collided = true;
         }
     }
+
+    public static void Reset()
+    {
+        collided = false;
+        first = true;
+    }
 }
