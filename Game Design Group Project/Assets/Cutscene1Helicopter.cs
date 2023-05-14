@@ -7,6 +7,8 @@ public class Cutscene1Helicopter : MonoBehaviour
     Animator animator;
     static bool first = true;
     static bool collided = false;
+    static bool played = false;
+    public AudioSource BeamCharge;
     void FixedUpdate()
     {
         if (first == true)
@@ -22,6 +24,15 @@ public class Cutscene1Helicopter : MonoBehaviour
         else
         {
             FireGun.setState(1);
+            if (played == false)
+            {
+                BeamCharge.Play();
+                played = true;
+            }
+            if (Input.GetKey(KeyCode.V))
+            {
+                BeamCharge.Stop();
+            }
         }
     }
 
@@ -38,5 +49,11 @@ public class Cutscene1Helicopter : MonoBehaviour
         collided = false;
         first = true;
         FireGun.setState(3);
+        played = false;
+    }
+
+    public static bool getCollided()
+    {
+        return collided;
     }
 }

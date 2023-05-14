@@ -5,8 +5,8 @@ using UnityEngine;
 public class CutsceneFireBeam : MonoBehaviour
 {
     public static bool touching = false;
-    public AudioSource Die;
     static float angle = -20;
+    public AudioSource BeamFiring;
 
     void FixedUpdate()
     {
@@ -23,7 +23,7 @@ public class CutsceneFireBeam : MonoBehaviour
         }
     }
 
-    public void reset()
+    public static void Reset()
     {
         angle = -20;
     }

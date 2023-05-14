@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
     static int transitionNumber;
     static string sceneName;
     static int levelNumber;
+    //static bool canQuit = false;
     static string[] levels = { "Level1", "Level2", "Level3", "Level4", "Start"};
 
     public static void win(string newSceneName, string winName)
@@ -75,6 +76,10 @@ public class LevelManager : MonoBehaviour
             SceneManager.LoadScene(levels[levelNumber]);
             Boss.bossReset();
             OnLose = false;
+        }
+        else if (Input.GetKey(KeyCode.R))
+        {
+            Application.Quit();
         }
     }
 }

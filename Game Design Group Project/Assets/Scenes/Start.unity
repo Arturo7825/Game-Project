@@ -478,6 +478,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneName: Cutscene0
+  canQuit: 1
 --- !u!4 &842366379
 Transform:
   m_ObjectHideFlags: 0

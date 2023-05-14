@@ -53,8 +53,10 @@ ScriptsOnlyBuild:
     UnityEditor.Graphs.dll:
     - UnityEditor.Graphs.AnimationBlendTree.Graph
     - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.AnyStateNode
     - UnityEditor.Graphs.AnimationStateMachine.Graph
     - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.StateNode
     - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
@@ -105,9 +107,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3084}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 4358}
+      Script: {instanceID: 4360}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -199,7 +201,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -258,7 +260,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 5336}
+      Script: {instanceID: 5338}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -319,7 +321,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 5498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -372,7 +374,7 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 5166}
+      Script: {instanceID: 5168}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -460,9 +462,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 1774}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 3776}
     - Class: 114
-      Script: {instanceID: 42418}
+      Script: {instanceID: 5498}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 157
@@ -558,11 +560,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3058}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 4916}
+      Script: {instanceID: 4918}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -629,9 +631,9 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -706,13 +708,13 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -787,15 +789,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4020}
+      Script: {instanceID: 4022}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -868,15 +870,15 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3342}
     - Class: 114
-      Script: {instanceID: 3842}
+      Script: {instanceID: 3844}
     - Class: 114
-      Script: {instanceID: 3898}
+      Script: {instanceID: 3900}
     - Class: 114
-      Script: {instanceID: 4740}
+      Script: {instanceID: 4742}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 5498}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -945,11 +947,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3526}
     - Class: 114
-      Script: {instanceID: 5340}
+      Script: {instanceID: 5342}
     - Class: 114
-      Script: {instanceID: 5496}
+      Script: {instanceID: 5498}
     - Class: 114
-      Script: {instanceID: 5770}
+      Script: {instanceID: 5772}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1094,11 +1096,11 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 3304}
     - Class: 114
-      Script: {instanceID: 4618}
+      Script: {instanceID: 4620}
     - Class: 114
-      Script: {instanceID: 4774}
+      Script: {instanceID: 4776}
     - Class: 114
-      Script: {instanceID: 5156}
+      Script: {instanceID: 5158}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -1265,7 +1267,7 @@ ScriptsOnlyBuild:
     className: CameraSystem
   - hash:
       serializedVersion: 2
-      Hash: d91fcd9ac7bd86d3d771dd6171620fad
+      Hash: 33ceaf73633b183e17ad6fbd7914ba6c
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LevelLoader
@@ -1611,6 +1613,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Outline
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Cutscene3Helicopter
   - hash:
       serializedVersion: 2
       Hash: c3d3430df9e3ea95e3e3d587961390fb
@@ -2043,12 +2051,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: LeftLaser
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Cutscene3Helicopter
   platform: 19
   scenePathNames:
   - Assets/Scenes/Start.unity
