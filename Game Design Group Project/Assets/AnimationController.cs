@@ -19,6 +19,7 @@ public class AnimationController : MonoBehaviour
     static bool right = true;
     public float dieLevel;
     public AudioSource jump;
+    static bool atZero;
     Vector2 position;
     void Start()
     {
@@ -39,16 +40,19 @@ public class AnimationController : MonoBehaviour
         }
 
         //if(temp != y)
-        if(rigidbody.velocity.y < 0)
+        if (rigidbody.velocity.y == 0)
+        {
+            atZero = true;
+        }
+        if(rigidbody.velocity.y < 0 && atZero == true)
         {
             falling = true;
-            //print(number);
-            /*
-            if (slowFallCount == 0)
-            {
-                rigidbody.velocity.y *= Time.DeltaTime;
-                slowFallCount = 1;
-            }*/
+            atZero = false;
+            //TRY PUTTING SOMETHING HERE TO COUNTERACT THE FALL SPEED
+            y += 2f * Time.deltaTime;
+            rigidbody.velocity = Vector3.zero;
+            Vector2 target = new Vector2(0.0f + x, 0.0f + y);
+            transform.position = Vector2.MoveTowards(transform.position, target, 1);
         }
         else
         {
@@ -79,10 +83,11 @@ public class AnimationController : MonoBehaviour
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
         }
-        else if (Input.GetKey(KeyCode.W) && (falling == false || jumpCount > 0 && falling == true))
+        //else if ((Input.GetKey(KeyCode.W) && falling == false && jumpCount == 0) || jumpCount > 0 && Input.GetKey(KeyCode.W) || falling == true)
+        else if ((Input.GetKey(KeyCode.W) && falling == false) || jumpCount > 0 || falling == true)
         {
             //if (jumpCount == 0 && falling == false && OnPlatform == true)
-            if (jumpCount == 0 && falling == false)
+            if (jumpCount == 0 && falling == false && Input.GetKey(KeyCode.W))
             {
                 jumpCount = 150;
                 jump.Play();
@@ -143,29 +148,6 @@ public class AnimationController : MonoBehaviour
         {
             animator.SetInteger("AnimState", 0);
         }
-        //if (OnPlatform == false && jumpCount == 0 && transform.position.y != y)
-        //if (jumpCount == 0 && transform.position.y != y)
-        /*
-        if (jumpCount != 0)
-        {
-            falling = true;
-            if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-            {
-                y = transform.position.y - 0.007f;
-            }
-            else
-            {
-                animator.SetInteger("AnimState", 2);
-                y = transform.position.y - 0.003f;
-            }
-            Vector2 target = new Vector2(0.0f + x, 0.0f + y);
-        }
-        else
-        {
-            falling = false;
-        }
-        */
-        //temp = y;
     }
     public static float getX()
     {
