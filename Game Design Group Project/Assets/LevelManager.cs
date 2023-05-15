@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    static bool OnWin = true;
+    static bool OnWin = false;
     static bool OnLose = false;
     static int transitionNumber;
     static string sceneName;

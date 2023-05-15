@@ -7,17 +7,22 @@ public class Cutscene2Helicopter : MonoBehaviour
     Animator animator;
     static bool first = true;
     static bool collided = false;
+    public AudioSource Helicopter;
     void FixedUpdate()
     {
-        if (first == true)
+        if (!Helicopter.isPlaying)
         {
-            first = false;
+            Helicopter.Play();
         }
         if (collided == false)
         {
             float y = transform.position.y - 0.07f;
             Vector2 target = new Vector2(transform.position.x, y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
+        }
+        else
+        {
+            Helicopter.Stop();
         }
     }
 
@@ -32,7 +37,5 @@ public class Cutscene2Helicopter : MonoBehaviour
     public static void Reset()
     {
         collided = false;
-        first = true;
-        FireGun.setState(3);
     }
 }

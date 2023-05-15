@@ -280,7 +280,7 @@ GameObject:
   - component: {fileID: 548621430}
   - component: {fileID: 548621429}
   m_Layer: 5
-  m_Name: Play Again
+  m_Name: Options
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +303,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: -481.29, y: -232.19}
-  m_SizeDelta: {x: 1000, y: 150}
+  m_SizeDelta: {x: 1000, y: 400}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &548621429
 MonoBehaviour:
@@ -338,7 +338,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Press V to Play Again
+  m_Text: 'Press V to Play Again
+
+
+    Press R to Quit'
 --- !u!222 &548621430
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -418,7 +421,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
   m_Text: "Credits:\n\tOmair - Programmer\n\tArturo - Artist\n\tNathaniel - Musician\n\tPixilart\n\tCharas\n\tFreesound\n\tAdobe
-    Illustrator\n\tSpeechify\n\tAudioMass\n\tKhinsider\n\tSound Jay\n\tClipArtMax"
+    Illustrator\n\tSpeechify\n\tAudioMass\n\tKhinsider\n\tSound Jay\n\tClipArtMax\n\tPineTools\n\tPixabay"
 --- !u!222 &825078311
 CanvasRenderer:
   m_ObjectHideFlags: 0
