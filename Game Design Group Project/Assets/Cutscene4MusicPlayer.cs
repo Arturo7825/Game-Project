@@ -6,19 +6,17 @@ using UnityEngine.SceneManagement;
 public class Cutscene4MusicPlayer : MonoBehaviour
 {
     public AudioSource Music;
-    static bool first = true;
     void Update()
     {
         Scene scene = SceneManager.GetActiveScene();
-        if (!Music.isPlaying && ((scene.name == "Start" && first == true) || (scene.name == "Cutscene4" && first == false)))
+        if (!Music.isPlaying && scene.name == "Cutscene4")
         {
             Music.Play();
-            first = false;
         }
         
-        if (scene.name == "Cutscene0")
+        if (scene.name == "Start")
         {
-            Music.Stop();
+            Destroy(this.gameObject);
         }
         GameObject.DontDestroyOnLoad(gameObject);
     }

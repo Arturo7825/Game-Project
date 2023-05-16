@@ -649,7 +649,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpHeight: 8
-  jumpWidth: 1.8
+  jumpWidth: 2.4
   levelNumber: 0
   rigidbody: {fileID: 699184067}
   dieLevel: -7

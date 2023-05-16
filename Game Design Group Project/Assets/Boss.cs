@@ -233,6 +233,7 @@ public class Boss : MonoBehaviour
         {
             //LevelManager.win("Start", "FinalWin");
             SceneManager.LoadScene("Level4-2");
+            Gun.GunReset();
         }
         if (firing == true)
         {

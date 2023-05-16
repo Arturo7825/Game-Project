@@ -16,11 +16,11 @@ public class CutsceneFireBeam : MonoBehaviour
             transform.localRotation = Quaternion.Euler(0, 180, angle);
             Vector2 target = new Vector2(transform.position.x,transform.position.y - 0.2f * Time.deltaTime);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
-        }
+        }/*
         else
         {
             Destroy (this.gameObject);
-        }
+        }*/
     }
 
     public static void Reset()

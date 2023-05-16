@@ -24,6 +24,7 @@ public class LevelLoader : MonoBehaviour
             if (canQuit == true)
             {
                 Application.Quit();
+                print("Attempting to quit");
             }
         }
     }

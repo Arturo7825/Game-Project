@@ -79,6 +79,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.R))
         {
+            print("Attempting to quit");
             Application.Quit();
         }
     }
