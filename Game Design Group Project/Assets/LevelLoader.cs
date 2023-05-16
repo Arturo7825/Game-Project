@@ -17,6 +17,7 @@ public class LevelLoader : MonoBehaviour
             Cutscene2Helicopter.Reset();
             Cutscene3Helicopter.Reset();
             CutsceneFireBeam.Reset();
+            Gun.GunReset();
         }
         else if (Input.GetKey(KeyCode.R))
         {

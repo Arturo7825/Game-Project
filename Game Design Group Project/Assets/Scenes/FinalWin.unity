@@ -251,9 +251,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 200440389}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0ab569eb017c8c94aa8e805181834755, type: 3}
+  m_Script: {fileID: 11500000, guid: 9404b7e199dc2304d9633252fe21b99d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sceneName: Start
+  canQuit: 1
 --- !u!4 &200440391
 Transform:
   m_ObjectHideFlags: 0
@@ -421,7 +423,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1.4
   m_Text: "Credits:\n\tOmair - Programmer\n\tArturo - Artist\n\tNathaniel - Musician\n\tPixilart\n\tCharas\n\tFreesound\n\tAdobe
-    Illustrator\n\tSpeechify\n\tAudioMass\n\tKhinsider\n\tSound Jay\n\tClipArtMax\n\tPineTools\n\tPixabay"
+    Illustrator\n\tSpeechify\n\tAudioMass\n\tKhinsider\n\tSound Jay\n\tClipArtMax\n\tPineTools\n\tPixabay\n\tOpenGameArt"
 --- !u!222 &825078311
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -442,7 +444,7 @@ GameObject:
   - component: {fileID: 1622022701}
   - component: {fileID: 1622022700}
   m_Layer: 5
-  m_Name: You Win
+  m_Name: To Be Continued
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -500,7 +502,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: You Win
+  m_Text: To Be Continued
 --- !u!222 &1622022701
 CanvasRenderer:
   m_ObjectHideFlags: 0

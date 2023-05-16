@@ -13,7 +13,7 @@ public class Cutscene3MusicPlayer : MonoBehaviour
             Music.Play();
         }
         Scene scene = SceneManager.GetActiveScene();
-        if (scene.name == "FinalWin")
+        if (scene.name == "Level4-2")
         {
             Destroy (this.gameObject);
         }

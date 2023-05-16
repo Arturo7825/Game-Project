@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 public class Boss : MonoBehaviour
@@ -230,7 +231,8 @@ public class Boss : MonoBehaviour
         health--;
         if (health == 0)
         {
-            LevelManager.win("Start", "FinalWin");
+            //LevelManager.win("Start", "FinalWin");
+            SceneManager.LoadScene("Level4-2");
         }
         if (firing == true)
         {
