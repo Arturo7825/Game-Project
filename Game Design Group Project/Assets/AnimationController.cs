@@ -28,7 +28,6 @@ public class AnimationController : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        //rigidbody = gameObject.GetComponent<Rigidbody2D>();
         x = transform.position.x;
         temp = y;
         y = transform.position.y;
@@ -38,40 +37,17 @@ public class AnimationController : MonoBehaviour
             LevelManager.lose(levelNumber);
         }
 
-        //if(temp != y)
         if(rigidbody.velocity.y < 0)
         {
             falling = true;
-            //print(number);
-            /*
-            if (slowFallCount == 0)
-            {
-                rigidbody.velocity.y *= Time.DeltaTime;
-                slowFallCount = 1;
-            }*/
         }
         else
         {
             falling = false;
             jumpCount = 0;
-            //slowFallCount = 0;
-            //print("false");
         }
-        //print(falling);
-        /*
-        if (jumpCount > 0)
-        {
-            falling = true;
-        }
-        else
-        {
-            falling = false;
-        }
-        */
         bool OnPlatform = Platform.getOnPlatform();
         bool onLadder = Ladder.getOnLadder();
-        //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
-        //if (Input.GetKey(KeyCode.W) && (OnPlatform == true && falling == false || jumpCount > 0 && falling == true && OnPlatform == false))
         if (onLadder == true && Input.GetKey(KeyCode.W))
         {
             y += 2f * Time.deltaTime;
@@ -81,7 +57,6 @@ public class AnimationController : MonoBehaviour
         }
         else if (Input.GetKey(KeyCode.W) && (falling == false || jumpCount > 0 && falling == true))
         {
-            //if (jumpCount == 0 && falling == false && OnPlatform == true)
             if (jumpCount == 0 && falling == false)
             {
                 jumpCount = 150;
@@ -109,8 +84,6 @@ public class AnimationController : MonoBehaviour
             }
             Vector2 target = new Vector2(0.0f + x, 0.0f + y);
             transform.position = Vector2.MoveTowards(transform.position, target, 1);
-            //GameObject.Find("Main Camera").transform.position = new Vector3(0 + x, 0 + y, -10);
-            //falling = true;
         }
         if(jumpCount > 0)
         {
@@ -143,29 +116,6 @@ public class AnimationController : MonoBehaviour
         {
             animator.SetInteger("AnimState", 0);
         }
-        //if (OnPlatform == false && jumpCount == 0 && transform.position.y != y)
-        //if (jumpCount == 0 && transform.position.y != y)
-        /*
-        if (jumpCount != 0)
-        {
-            falling = true;
-            if(Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.A))
-            {
-                y = transform.position.y - 0.007f;
-            }
-            else
-            {
-                animator.SetInteger("AnimState", 2);
-                y = transform.position.y - 0.003f;
-            }
-            Vector2 target = new Vector2(0.0f + x, 0.0f + y);
-        }
-        else
-        {
-            falling = false;
-        }
-        */
-        //temp = y;
     }
     public static float getX()
     {
